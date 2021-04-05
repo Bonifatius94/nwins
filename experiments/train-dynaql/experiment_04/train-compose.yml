@@ -1,0 +1,18 @@
+
+version: "2"
+
+services:
+
+  01_dynaql_vs_rand:
+    image: nwins:latest
+    command: 01_dynaql_vs_rand.json
+    volumes:
+      - './settings:/app/settings'
+      - './train:/app/train'
+
+  02_dynaql_vs_rand:
+    image: nwins:latest
+    command: 02_dynaql_vs_rand.json
+    volumes:
+      - './settings:/app/settings'
+      - './train:/app/train'

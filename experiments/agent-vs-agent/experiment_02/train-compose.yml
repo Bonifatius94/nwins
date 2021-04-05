@@ -1,0 +1,25 @@
+
+version: "2"
+
+services:
+
+  01_dql_vs_simple:
+    image: nwins:latest
+    command:  01_dql_vs_simple.json
+    volumes:
+      - './settings:/app/settings'
+      - './train:/app/train'
+
+  02_dql_vs_dynaql:
+    image: nwins:latest
+    command:  02_dql_vs_dynaql.json
+    volumes:
+      - './settings:/app/settings'
+      - './train:/app/train'
+
+  03_dql_vs_sl:
+    image: nwins:latest
+    command:  03_dql_vs_sl.json
+    volumes:
+      - './settings:/app/settings'
+      - './train:/app/train'

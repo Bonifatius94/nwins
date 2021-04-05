@@ -1,0 +1,26 @@
+{
+    "game_settings": {
+        "columns": 5,
+        "rows": 4,
+        "win_conn": 4
+    },
+
+    "agent_a": {
+        "name": "03_DoubleQL_SideA",
+        "type": "DoubleQL",
+        "trainable": false,
+        "semi_greedy_epsilon" : 0.1,
+        "load_explizit_model" : "/home/ubuntu/Documents/g02/final_exam/experiments/AgentVSAgent/DoubleQL_SideA_vs_rand/01_DoubleQL_SideA_312000000.csv"
+    },
+
+    "agent_b": {
+        "name": "03_DynaQL_SideB",
+        "type": "SarsaLambda",
+        "trainable": false,
+        "semi_greedy_epsilon" : 0.1,
+        "load_explizit_model" : "/home/ubuntu/Documents/g02/final_exam/experiments/AgentVSAgent/SarsaLambda_SideB_vs_agent/03_SarsaLambda_SideB_144005704.csv"
+    },
+
+    "training_interval": 0,
+    "inference_interval": 10000
+}

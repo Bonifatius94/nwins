@@ -1,0 +1,25 @@
+
+version: "2"
+
+services:
+
+  ql_vs_rand:
+    image: nwins:latest
+    command: 01_ql_vs_rand.json
+    volumes:
+      - './settings:/app/settings'
+      - './train:/app/train'
+
+  rand_vs_ql:
+    image: nwins:latest
+    command: 02_rand_vs_ql.json
+    volumes:
+      - './settings:/app/settings'
+      - './train:/app/train'
+
+  ql_vs_ql:
+    image: nwins:latest
+    command: 03_ql_vs_ql.json
+    volumes:
+      - './settings:/app/settings'
+      - './train:/app/train'

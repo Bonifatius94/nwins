@@ -1,0 +1,25 @@
+
+version: "2"
+
+services:
+
+  dql_vs_rand:
+    image: nwins:latest
+    command: 01_dql_vs_rand.json
+    volumes:
+      - './settings:/app/settings'
+      - './train:/app/train'
+
+  rand_vs_dql:
+    image: nwins:latest
+    command: 02_rand_vs_dql.json
+    volumes:
+      - './settings:/app/settings'
+      - './train:/app/train'
+
+  dql_vs_dql:
+    image: nwins:latest
+    command: 03_dql_vs_dql.json
+    volumes:
+      - './settings:/app/settings'
+      - './train:/app/train'

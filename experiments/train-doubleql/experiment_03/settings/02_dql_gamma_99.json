@@ -1,0 +1,32 @@
+{
+    "game_settings": {
+        "columns": 5,
+        "rows": 4,
+        "win_conn": 4
+    },
+
+    "agent_a": {
+        "name": "Gamma_99_DoubleQL_SideA",
+        "type": "DoubleQL",
+        "trainable": true,
+        "semi_greedy_epsilon" : 0.1,
+        "params" : {
+            "exp_strategy": "epsilon_greedy_lindecay",
+            "start_epsilon": 0.1,
+            "min_epsilon": 0.1,
+            "decay_episodes": 0,
+            "alpha": 0.1,
+            "gamma": 0.99,
+            "combine_qtables": "avg"
+        }   
+    },
+
+    "agent_b": {
+        "name": "Random_SideB",
+        "type": "Random",
+        "trainable": false
+    },
+
+    "training_interval": 1000000,
+    "inference_interval": 10000
+}

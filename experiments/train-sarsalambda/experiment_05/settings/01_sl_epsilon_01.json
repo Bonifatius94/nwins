@@ -1,0 +1,32 @@
+{
+    "game_settings": {
+        "columns": 5,
+        "rows": 4,
+        "win_conn": 4
+    },
+
+    "agent_a": {
+        "name": "Epsilon_01_SarsaLambda_SideA",
+        "type": "SarsaLambda",
+        "trainable": true,
+        "semi_greedy_epsilon" : 0.1,
+        "params" : {
+            "exp_strategy": "epsilon_greedy_lindecay",
+            "start_epsilon": 0.01,
+            "min_epsilon": 0.01,
+            "decay_episodes": 0,
+            "alpha": 0.01,
+            "gamma": 0.99,
+            "lambda": 0.99
+        }   
+    },
+
+    "agent_b": {
+        "name": "Random_SideB",
+        "type": "Random",
+        "trainable": false
+    },
+
+    "training_interval": 1000000,
+    "inference_interval": 10000
+}

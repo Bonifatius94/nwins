@@ -1,0 +1,32 @@
+
+version: "2"
+
+services:
+
+  01_dynaql_minmem_32:
+    image: nwins:latest
+    command: 01_dynaql_minmem_32.json
+    volumes:
+      - './settings:/app/settings'
+      - './train:/app/train'
+
+  02_dynaql_minmem_500:
+    image: nwins:latest
+    command: 02_dynaql_minmem_500.json
+    volumes:
+      - './settings:/app/settings'
+      - './train:/app/train'
+
+  03_dynaql_minmem_2000:
+    image: nwins:latest
+    command: 03_dynaql_minmem_2000.json
+    volumes:
+      - './settings:/app/settings'
+      - './train:/app/train'
+
+  04_dynaql_minmem_5000:
+    image: nwins:latest
+    command: 04_dynaql_minmem_5000.json
+    volumes:
+      - './settings:/app/settings'
+      - './train:/app/train'

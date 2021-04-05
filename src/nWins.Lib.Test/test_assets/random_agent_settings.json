@@ -1,0 +1,5 @@
+{
+    "name": "rand_test",
+    "type": "Random",
+    "trainable": false
+}

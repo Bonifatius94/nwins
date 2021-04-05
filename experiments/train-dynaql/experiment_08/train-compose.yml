@@ -1,0 +1,39 @@
+
+version: "2"
+
+services:
+
+  01_dynaql_epsilon_01:
+    image: nwins:latest
+    command: 01_dynaql_epsilon_01.json
+    volumes:
+      - './settings:/app/settings'
+      - './train:/app/train'
+
+  02_dynaql_epsilon_05:
+    image: nwins:latest
+    command: 02_dynaql_epsilon_05.json
+    volumes:
+      - './settings:/app/settings'
+      - './train:/app/train'
+
+  03_dynaql_epsilon_08:
+    image: nwins:latest
+    command: 03_dynaql_epsilon_08.json
+    volumes:
+      - './settings:/app/settings'
+      - './train:/app/train'
+
+  04_dynaql_epsilon_10:
+    image: nwins:latest
+    command: 04_dynaql_epsilon_10.json
+    volumes:
+      - './settings:/app/settings'
+      - './train:/app/train'
+  
+  05_dynaql_epsilon_20:
+    image: nwins:latest
+    command: 05_dynaql_epsilon_20.json
+    volumes:
+      - './settings:/app/settings'
+      - './train:/app/train'

@@ -1,0 +1,32 @@
+
+version: "2"
+
+services:
+
+  gamma_999_dql:
+    image: nwins:latest
+    command: 01_dql_gamma_999.json
+    volumes:
+      - './settings:/app/settings'
+      - './train:/app/train'
+
+  gamma_99_dql:
+    image: nwins:latest
+    command: 02_dql_gamma_99.json
+    volumes:
+      - './settings:/app/settings'
+      - './train:/app/train'
+
+  gamma_95_dql:
+    image: nwins:latest
+    command: 03_dql_gamma_95.json
+    volumes:
+      - './settings:/app/settings'
+      - './train:/app/train'
+
+  gamma_80_dql:
+    image: nwins:latest
+    command: 04_dql_gamma_80.json
+    volumes:
+      - './settings:/app/settings'
+      - './train:/app/train'

@@ -1,0 +1,17 @@
+{
+    "name": "dynaql_a",
+    "type": "DynaQL",
+    "trainable": true,
+    "params": {
+        "exp_strategy": "epsilon_greedy_lindecay",
+        "start_epsilon": 1.0,
+        "min_epsilon": 0.1,
+        "decay_episodes": 0,
+        "alpha": 0.01,
+        "gamma": 0.99,
+        "dynaq_steps": 8,
+        "dynaq_memory_size": 20000,
+        "dynaq_min_memory": 300
+    },
+    "semi_greedy_epsilon" : 0.1
+}

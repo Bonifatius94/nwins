@@ -1,0 +1,39 @@
+
+version: "2"
+
+services:
+
+  epsilon_01_ql:
+    image: nwins:latest
+    command: 01_ql_epsilon_01.json
+    volumes:
+      - './settings:/app/settings'
+      - './train:/app/train'
+
+  epsilon_05_ql:
+    image: nwins:latest
+    command: 02_ql_epsilon_05.json
+    volumes:
+      - './settings:/app/settings'
+      - './train:/app/train'
+
+  epsilon_08_ql:
+    image: nwins:latest
+    command: 03_ql_epsilon_08.json
+    volumes:
+      - './settings:/app/settings'
+      - './train:/app/train'
+
+  epsilon_10_ql:
+    image: nwins:latest
+    command: 04_ql_epsilon_10.json
+    volumes:
+      - './settings:/app/settings'
+      - './train:/app/train'
+
+  epsilon_20_ql:
+    image: nwins:latest
+    command: 05_ql_epsilon_20.json
+    volumes:
+      - './settings:/app/settings'
+      - './train:/app/train'

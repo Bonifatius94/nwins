@@ -1,0 +1,32 @@
+
+version: "2"
+
+services:
+
+  alpha_01_ql:
+    image: nwins:latest
+    command: 01_ql_alpha_01.json
+    volumes:
+      - './settings:/app/settings'
+      - './train:/app/train'
+
+  alpha_05_ql:
+    image: nwins:latest
+    command: 02_ql_alpha_05.json
+    volumes:
+      - './settings:/app/settings'
+      - './train:/app/train'
+
+  alpha_10_ql:
+    image: nwins:latest
+    command: 03_ql_alpha_10.json
+    volumes:
+      - './settings:/app/settings'
+      - './train:/app/train'
+
+  alpha_20_ql:
+    image: nwins:latest
+    command: 04_ql_alpha_20.json
+    volumes:
+      - './settings:/app/settings'
+      - './train:/app/train'

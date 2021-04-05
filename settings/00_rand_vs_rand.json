@@ -1,0 +1,22 @@
+{
+    "game_settings": {
+        "columns": 7,
+        "rows": 6,
+        "win_conn": 4
+    },
+
+    "agent_a": {
+        "name": "Random_SideA",
+        "type": "random",
+        "trainable": false
+    },
+
+    "agent_b": {
+        "name": "Random_SideB",
+        "type": "random",
+        "trainable": false
+    },
+
+    "training_interval": 1000000,
+    "inference_interval": 10000
+}

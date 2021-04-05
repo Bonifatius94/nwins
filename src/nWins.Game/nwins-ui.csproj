@@ -1,0 +1,10 @@
+<Project Sdk="Godot.NET.Sdk/3.2.3">
+  <PropertyGroup>
+    <TargetFramework>net4.7</TargetFramework>
+    <RootNamespace>nwinsui</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\nWins.Lib\nWins.Lib-mono.csproj" />
+  </ItemGroup>
+</Project>

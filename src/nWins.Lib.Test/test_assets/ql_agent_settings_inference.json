@@ -1,0 +1,11 @@
+{
+    "name": "ql_test",
+    "type": "SimpleQL",
+    "params": {
+        "exp_strategy": "greedy_inference",
+        "alpha": 0.01,
+        "gamma": 0.99
+    },
+    "semi_greedy_epsilon" : 0.1,
+    "trainable": false
+}

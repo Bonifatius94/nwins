@@ -1,0 +1,25 @@
+
+version: "2"
+
+services:
+
+  01_dynaql_memsize_6000:
+    image: nwins:latest
+    command: 01_dynaql_memsize_6000.json
+    volumes:
+      - './settings:/app/settings'
+      - './train:/app/train'
+
+  02_dynaql_memsize_12000:
+    image: nwins:latest
+    command: 02_dynaql_memsize_12000.json
+    volumes:
+      - './settings:/app/settings'
+      - './train:/app/train'
+
+  03_dynaql_memsize_24000:
+    image: nwins:latest
+    command: 03_dynaql_memsize_24000.json
+    volumes:
+      - './settings:/app/settings'
+      - './train:/app/train'

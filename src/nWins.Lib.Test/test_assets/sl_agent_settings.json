@@ -1,0 +1,14 @@
+{
+    "name": "sl_a",
+    "type": "sarsalambda",
+    "trainable": true,
+    "params" : {
+        "exp_strategy": "epsilon_greedy_lindecay",
+        "start_epsilon": 0.1,
+        "min_epsilon": 0.1,
+        "decay_episodes": 0,
+        "alpha": 0.1,
+        "gamma": 0.99,
+        "lambda": 0.99
+    }
+}

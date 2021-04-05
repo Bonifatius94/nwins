@@ -1,0 +1,39 @@
+
+version: "2"
+
+services:
+
+  dynaql_vs_rand_alpha_03:
+    image: nwins:latest
+    command: 01_dynaql_vs_rand_alpha_03.json
+    volumes:
+      - './settings:/app/settings'
+      - './train:/app/train'
+      
+  dynaql_vs_rand_alpha_02:
+    image: nwins:latest
+    command: 02_dynaql_vs_rand_alpha_02.json
+    volumes:
+      - './settings:/app/settings'
+      - './train:/app/train'
+      
+  dynaql_vs_rand_alpha_01:
+    image: nwins:latest
+    command: 03_dynaql_vs_rand_alpha_01.json
+    volumes:
+      - './settings:/app/settings'
+      - './train:/app/train'
+      
+  dynaql_vs_rand_alpha_005:
+    image: nwins:latest
+    command: 04_dynaql_vs_rand_alpha_005.json
+    volumes:
+      - './settings:/app/settings'
+      - './train:/app/train'
+      
+  dynaql_vs_rand_alpha_002:
+    image: nwins:latest
+    command: 05_dynaql_vs_rand_alpha_002.json
+    volumes:
+      - './settings:/app/settings'
+      - './train:/app/train'

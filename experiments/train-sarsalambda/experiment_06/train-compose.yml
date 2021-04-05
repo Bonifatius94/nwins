@@ -1,0 +1,39 @@
+
+version: "2"
+
+services:
+
+  lamda_80_sl:
+    image: nwins:latest
+    command: 01_sl_lambda_80.json
+    volumes:
+      - './settings:/app/settings'
+      - './train:/app/train'
+
+  lamda_90_sl:
+    image: nwins:latest
+    command: 02_sl_lambda_90.json
+    volumes:
+      - './settings:/app/settings'
+      - './train:/app/train'
+
+  lamda_95_sl:
+    image: nwins:latest
+    command: 03_sl_lambda_95.json
+    volumes:
+      - './settings:/app/settings'
+      - './train:/app/train'
+
+  lamda_99_sl:
+    image: nwins:latest
+    command: 04_sl_lambda_99.json
+    volumes:
+      - './settings:/app/settings'
+      - './train:/app/train'
+
+  lamda_999_sl:
+    image: nwins:latest
+    command: 05_sl_lambda_999.json
+    volumes:
+      - './settings:/app/settings'
+      - './train:/app/train'

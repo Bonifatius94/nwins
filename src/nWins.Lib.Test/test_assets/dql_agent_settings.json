@@ -1,0 +1,15 @@
+{
+    "name": "dql_a",
+    "type": "doubleql",
+    "trainable": true,
+    "params" : {
+        "exp_strategy": "epsilon_greedy_lindecay",
+        "start_epsilon": 0.1,
+        "min_epsilon": 0.1,
+        "decay_episodes": 0,
+        "alpha": 0.01,
+        "gamma": 0.99,
+        "combine_qtables": "avg"
+    },
+    "semi_greedy_epsilon" : 0.1
+}

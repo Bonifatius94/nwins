@@ -1,0 +1,14 @@
+{
+    "name": "ql_test",
+    "type": "SimpleQL",
+    "params": {
+        "exp_strategy": "epsilon_greedy_lindecay",
+        "start_epsilon": 1.0,
+        "min_epsilon": 0.01,
+        "decay_episodes": 10000000,
+        "alpha": 0.01,
+        "gamma": 0.99
+    },
+    "semi_greedy_epsilon" : 0.1,
+    "trainable": true
+}

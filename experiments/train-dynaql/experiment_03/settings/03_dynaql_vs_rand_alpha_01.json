@@ -1,0 +1,34 @@
+{
+    "game_settings": {
+        "columns": 5,
+        "rows": 4,
+        "win_conn": 4
+    },
+
+    "agent_a": {
+        "name": "03_DynaQL_SideA",
+        "type": "DynaQL",
+        "trainable": true,
+        "semi_greedy_epsilon" : 0.1,
+        "params" : {
+            "exp_strategy": "epsilon_greedy_lindecay",
+            "start_epsilon": 1.0,
+            "min_epsilon": 0.1,
+            "decay_episodes": 1000000,
+            "alpha": 0.1,
+            "gamma": 0.99,
+            "dynaq_steps": 32,
+            "dynaq_memory_size": 1000,
+            "dynaq_min_memory": 32
+        }
+    },
+
+    "agent_b": {
+        "name": "Random_SideB",
+        "type": "Random",
+        "trainable": false
+    },
+
+    "training_interval": 100000,
+    "inference_interval": 10000
+}

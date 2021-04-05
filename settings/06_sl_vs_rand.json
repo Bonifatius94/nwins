@@ -1,0 +1,42 @@
+{
+    "game_settings": {
+        "columns": 5,
+        "rows": 4,
+        "win_conn": 4
+    },
+
+    "agent_a": {
+        "name": "sl_a",
+        "type": "sarsalambda",
+        "trainable": true,
+        "semi_greedy_epsilon" : 0.1,
+        "params" : {
+            "exp_strategy": "epsilon_greedy_lindecay",
+            "start_epsilon": 0.1,
+            "min_epsilon": 0.1,
+            "decay_episodes": 0,
+            "alpha": 0.01,
+            "gamma": 0.99,
+            "lambda": 0.99
+        }
+    },
+
+    "agent_b": {
+        "name": "sl_b",
+        "type": "sarsalambda",
+        "trainable": true,
+        "semi_greedy_epsilon" : 0.1,
+        "params" : {
+            "exp_strategy": "epsilon_greedy_lindecay",
+            "start_epsilon": 0.1,
+            "min_epsilon": 0.1,
+            "decay_episodes": 0,
+            "alpha": 0.01,
+            "gamma": 0.99,
+            "lambda": 0.99
+        }
+    },
+
+    "training_interval": 100000,
+    "inference_interval": 100000
+}
