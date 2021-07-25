@@ -96,8 +96,10 @@ def main():
     for i in range(first_csv_model, len(sys.argv)):
         if sys.argv[i] not in ALL_ARG_SPECIFIERS: csv_filepaths.append(sys.argv[i])
 
+    # create a SQLite database from trained Q-table CSV files
     model_path = Path(Path().cwd().parents[0] / 'src' / 'nWins.Game' / 'model' / 'NwinsQtable.db')
     csv_models_pattern = Path('models')
+    create_db_from_models(model_path, csv_models_pattern)
 
 
 if __name__=='__main__':
