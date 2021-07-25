@@ -1,8 +1,12 @@
-# Final Exam - n Wins Game
+# Connect N
 
 ## About
-This project contains a reinforcement learning approach for playing an adaptation of the very popular game *Connect Four*, called *Connect N*.
-This includes game logic, UI and AI components.
+This project contains a reinforcement learning approach for playing an adaptation of the very popular game *Connect Four*, called *Connect N*
+consisting of basically 3 components: game logic, game UI and AI training.
+
+The project was part of a course at the University of Augsburg (chair of Human Centered Multimedia). It was developed by:
+- Marco Tröster
+- Simon Pistrosch
 
 ## Game Rules
 The original game consists of 6 rows and 7 columns. Both players can put one of their stones into a column alternatingly. 
@@ -21,7 +25,8 @@ This section is about getting the Godot game to work (using an Archlinux Manjaro
 
 1) Set up your machine using a script from the setups directory (see the README for further information).
 2) Build the Godot game app (see the README from src/nWis.Game/)
-3) Launch the Godot game app you just built
+3) Download some pre-trained AI database
+4) Launch the Godot game app you just built using the pre-trained draw database
 
 ### How to train the AI
 This section shows how to run some dockerized AI trainings. Some examples are covered in the experiments/ directory.
@@ -36,7 +41,7 @@ sudo usermod -aG docker $USER && reboot
 sudo snap install code --classic
 ```
 
-2) Download the source code from GitHub.
+2) Download the source code from GitHub if you have not done already.
 ```sh
 # clone the git repository
 git clone https://hcm-lab.de/git/course/rl/2020/g02
@@ -53,8 +58,50 @@ docker run --name training_001 nwins 00_rand_vs_rand.json
 ```
 
 4) Create your own experiments with Docker-Compose (see the experiments directory for further information).
+Here's an example configuration (taken from experiments/train-sarsalambda/experiment_06):
+```yaml
+version: "2"
 
-5) Extract the training results and convert it from CSV to a database model (SQLite).
+services:
+
+  lamda_80_sl:
+    image: nwins:latest
+    command: 01_sl_lambda_80.json
+    volumes:
+      - './settings:/app/settings'
+      - './train:/app/train'
+
+  lamda_90_sl:
+    image: nwins:latest
+    command: 02_sl_lambda_90.json
+    volumes:
+      - './settings:/app/settings'
+      - './train:/app/train'
+
+  lamda_95_sl:
+    image: nwins:latest
+    command: 03_sl_lambda_95.json
+    volumes:
+      - './settings:/app/settings'
+      - './train:/app/train'
+
+  lamda_99_sl:
+    image: nwins:latest
+    command: 04_sl_lambda_99.json
+    volumes:
+      - './settings:/app/settings'
+      - './train:/app/train'
+
+  lamda_999_sl:
+    image: nwins:latest
+    command: 05_sl_lambda_999.json
+    volumes:
+      - './settings:/app/settings'
+      - './train:/app/train'
+```
+
+5) Extract the training results and convert it from CSV to a SQLite database model 
+(see create-model/ directory for further information).
 
 6) Copy your trained model into the model/ directory of your binary Godot app output.
 
