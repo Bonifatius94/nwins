@@ -4,7 +4,7 @@
 This project contains a reinforcement learning approach for playing an adaptation of the very popular game *Connect Four*, called *Connect N*
 consisting of basically 3 components: game logic, game UI and AI training.
 
-The project was part of a course at the University of Augsburg (chair of Human Centered Multimedia). It was developed by:
+The project was developed by:
 - Marco Tröster
 - Simon Pistrosch
 
@@ -128,3 +128,6 @@ docker cp training_001:/app/train .
 # attach to the container via bash console
 docker exec -it training_001 bash
 ```
+
+## License
+This project is available under the terms of the MIT license.
