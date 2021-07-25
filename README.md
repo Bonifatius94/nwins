@@ -44,8 +44,8 @@ sudo snap install code --classic
 2) Download the source code from GitHub if you have not done already.
 ```sh
 # clone the git repository
-git clone https://hcm-lab.de/git/course/rl/2020/g02
-cd g02
+git clone https://github.com/Bonifatius94/nwins
+cd nwins
 ```
 
 3) Build the Docker image and start a training session with a sample configuration.
@@ -57,8 +57,7 @@ docker build . -t "nwins"
 docker run --name training_001 nwins 00_rand_vs_rand.json
 ```
 
-4) Create your own experiments with Docker-Compose (see the experiments directory for further information).
-Here's an example configuration (taken from experiments/train-sarsalambda/experiment_06):
+4) Create your own experiments with Docker-Compose. Here's an example how it could look like:
 ```yaml
 version: "2"
 
