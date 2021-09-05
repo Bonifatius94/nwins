@@ -1,7 +1,7 @@
 # Connect N
 
 ## About
-This project contains a reinforcement learning approach for playing an adaptation of the very popular game *Connect Four*, called *Connect N*
+This project contains a reinforcement learning approach for playing an adaptation of the very popular game *Connect Four*
 consisting of basically 3 components: game logic, game UI and AI training.
 
 The project was developed by:
