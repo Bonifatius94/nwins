@@ -77,15 +77,19 @@ namespace nWins.Lib.Core
     }
 
     /// <summary>
-    /// A full-featured implementation of the IGameCallback interface that can be initialized with generic game settings.
-    /// This class represents a single n-wins game including the action history, outcome, granted rewards, etc.
+    /// A full-featured implementation of the IGameCallback interface
+    /// that can be initialized with generic game settings.
+    /// This class represents a single n-wins game including the action history,
+    /// outcome, granted rewards, etc.
     /// </summary>
     public class GameEngine : IGameEngine
     {
         /// <summary>
-        /// Create a new game engine instance with the given parameters (defaulting to standard parameters if not specified).
+        /// Create a new game engine instance with the given parameters
+        /// (defaulting to standard parameters if not specified).
         /// </summary>
-        /// <param name="settings">The parameters of the new game engine (defaulting to standard parameters if not specified).</param>
+        /// <param name="settings">The parameters of the new game engine
+        /// (defaulting to standard parameters if not specified).</param>
         public GameEngine(IGameSettings settings = null)
         {
             _settings = settings ?? new GameSettings();
@@ -96,27 +100,51 @@ namespace nWins.Lib.Core
         #region IGameSummary
 
         public GameResult Result => CurrentState.IsConnectN(_settings.StonesToConnect) 
-            ? (LastAction.Value.ActingSide == GameSide.SideA ? GameResult.WinSideA : GameResult.WinSideB) : GameResult.Tie;
+            ? (LastAction.Value.ActingSide == GameSide.SideA
+                ? GameResult.WinSideA
+                : GameResult.WinSideB)
+            : GameResult.Tie;
 
-        public IEnumerable<ActionLog> AllActions => ActionHistory.Reverse().ToList();
+        public IEnumerable<ActionLog> AllActions
+            => ActionHistory
+                .Reverse()
+                .ToList();
 
-        public IEnumerable<ActionLog> ActionsSideA => ActionHistory.Reverse().Where(x => x.Action.ActingSide == GameSide.SideA).ToList();
+        public IEnumerable<ActionLog> ActionsSideA
+            => ActionHistory
+                .Reverse()
+                .Where(x => x.Action.ActingSide == GameSide.SideA)
+                .ToList();
 
-        public IEnumerable<ActionLog> ActionsSideB => ActionHistory.Reverse().Where(x => x.Action.ActingSide == GameSide.SideB).ToList();
+        public IEnumerable<ActionLog> ActionsSideB
+            => ActionHistory
+                .Reverse()
+                .Where(x => x.Action.ActingSide == GameSide.SideB)
+                .ToList();
 
         #endregion IGameSummary
 
         #region IGameCallback
 
-        public Stack<ActionLog> ActionHistory { get; } = new Stack<ActionLog>();
+        public Stack<ActionLog> ActionHistory { get; } =
+            new Stack<ActionLog>();
 
-        public GameAction? LastAction => ActionHistory.Count > 0 ? (GameAction?)ActionHistory.Peek().Action : null;
+        public GameAction? LastAction
+            => ActionHistory.Count > 0
+                ? (GameAction?)ActionHistory.Peek().Action : null;
 
-        public IGameState CurrentState => ActionHistory.Count > 0 ? ActionHistory.Peek().NewState : GameStateFactory.CreateState(_settings.Rows, _settings.Columns);
+        public IGameState CurrentState
+            => ActionHistory.Count > 0
+                ? ActionHistory.Peek().NewState
+                : GameStateFactory.CreateState(_settings.Rows, _settings.Columns);
 
-        public GameSide ActingSide => ActionHistory.Count > 0 ? LastAction.Value.ActingSide.Opponent() : GameSide.SideA;
+        public GameSide ActingSide
+            => ActionHistory.Count > 0
+                ? LastAction.Value.ActingSide.Opponent()
+                : GameSide.SideA;
 
-        public IEnumerable<GameAction> PossibleActions => CurrentState.GetPossibleActions();
+        public IEnumerable<GameAction> PossibleActions
+            => CurrentState.GetPossibleActions();
 
         public ActionLog ApplyAction(GameAction action)
         {
