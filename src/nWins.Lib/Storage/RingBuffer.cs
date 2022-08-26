@@ -2,6 +2,8 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 
+namespace nWins.Lib.Storage;
+
 public class RingBuffer<T> : Queue<T>
 {
     public RingBuffer(int size)
