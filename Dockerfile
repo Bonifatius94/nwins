@@ -1,6 +1,6 @@
 
 # use the official base image with a preinstalled Microsoft dotnet 5.0 SDK 
-FROM mcr.microsoft.com/dotnet/sdk:5.0
+FROM mcr.microsoft.com/dotnet/sdk:6.0
 
 # install procps package (required to use pgrep in entrypoint.sh)
 RUN apt-get update && apt-get install -y procps && rm -rf /var/lib/apt/lists/*
