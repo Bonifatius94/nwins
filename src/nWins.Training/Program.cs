@@ -57,8 +57,9 @@ namespace nWins.Training
             if (!args[0].Equals("--settings")) { throw new ArgumentException("Invalid arguments! Settings parameter is not specified!"); }
 
             // retrieve the settings file either as absolute path or as path relating to $SETTINGS_ROOT env variable
+            var envSettings = new EnvironmentSettings();
             string settingsFilePath = Path.IsPathFullyQualified(args[1]) ? args[1]
-                : Path.Combine(EnvironmentSettings.Instance.SettingsRootDir, args[1]);
+                : Path.Combine(envSettings.SettingsRootDir, args[1]);
 
             // make sure that the settings file exists
             if (!File.Exists(settingsFilePath)) { throw new ArgumentException($"Invalid arguments! The settings file '{ settingsFilePath }' does not exist!"); }

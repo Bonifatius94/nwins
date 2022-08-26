@@ -55,8 +55,11 @@ namespace nWins.Lib.Session
         /// <param name="settings">The settings to be applied.</param>
         public TrainingSession(ITrainingSettings settings)
         {
+            envSettings = new EnvironmentSettings();
             LoadFromSettings(settings);
         }
+
+        private readonly EnvironmentSettings envSettings;
 
         public ITrainingSettings Settings {get; private set;}
         public ITrainableAgent AgentA { get; private set;}
@@ -225,7 +228,7 @@ namespace nWins.Lib.Session
         private void logWinRates(int winsSideA, int winsSideB, int ties, int logInterval, int trainInterval)
         {
             string agentsDirectoryName = Settings.ConfigAgentA.AgentName + "_vs_" + Settings.ConfigAgentB.AgentName;
-            string agentsDirectoryPath = Path.Combine(EnvironmentSettings.Instance.LogsRootDir, agentsDirectoryName);
+            string agentsDirectoryPath = Path.Combine(envSettings.LogsRootDir, agentsDirectoryName);
 
             if (!Directory.Exists(agentsDirectoryPath)) {
                 Directory.CreateDirectory(agentsDirectoryPath);

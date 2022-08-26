@@ -9,11 +9,6 @@ namespace nWins.Lib.Settings
     public class EnvironmentSettings
     {
         /// <summary>
-        /// The environment settings instance created on first use (singleton pattern).
-        /// </summary>
-        public static EnvironmentSettings Instance = new EnvironmentSettings();
-
-        /// <summary>
         /// The models root directory storing the agent's training results.
         /// </summary>
         public string ModelRootDir => Environment.ExpandEnvironmentVariables("%MODELS_ROOT%");

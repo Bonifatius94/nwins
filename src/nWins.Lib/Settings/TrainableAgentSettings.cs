@@ -100,6 +100,13 @@ namespace nWins.Lib.Settings
     [JsonObject]
     public class TrainableAgentSettings : ITrainableAgentSettings
     {
+        public TrainableAgentSettings()
+        {
+            envSettings = new EnvironmentSettings();
+        }
+
+        private readonly EnvironmentSettings envSettings;
+
         [JsonRequired]
         [JsonProperty("name")]
         public string AgentName { get; set; }
@@ -130,7 +137,7 @@ namespace nWins.Lib.Settings
 
         private string getLatestModelFilePath()
         {
-            string modelDir = Path.Combine(EnvironmentSettings.Instance.ModelRootDir, AgentName);
+            string modelDir = Path.Combine(envSettings.ModelRootDir, AgentName);
             if (!Directory.Exists(modelDir)) { return null; }
 
             var modelFiles = Directory.GetFiles(modelDir, $"*{ AgentName }*");
@@ -145,7 +152,7 @@ namespace nWins.Lib.Settings
 
         public string GetModelPath(int episode, string fileExt = ".csv")
         {
-            return Path.Combine(EnvironmentSettings.Instance.ModelRootDir, AgentName, $"{ AgentName }_{ episode }{ fileExt }");
+            return Path.Combine(envSettings.ModelRootDir, AgentName, $"{ AgentName }_{ episode }{ fileExt }");
         }
     }
 }
